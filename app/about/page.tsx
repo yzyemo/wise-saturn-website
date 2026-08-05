@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowIcon, FarmIcon, ShieldIcon, WaterIcon } from "../components/Icons";
+import { ArrowIcon, FarmIcon, FlowIcon, ShieldIcon, WaterIcon } from "../components/Icons";
 
 export const metadata: Metadata = { title: "About", description: "About Wise Saturn and its practical approach to livestock water systems." };
 
+const principles = [
+  { number: "01", title: "Australian Innovation", text: "Developing practical livestock water systems around Australian farm conditions.", icon: <FarmIcon /> },
+  { number: "02", title: "Our Mission", text: "Support cleaner livestock water with less repetitive trough maintenance.", icon: <WaterIcon /> },
+  { number: "03", title: "Quality", text: "Keep the product purposeful, understandable and suited to daily use.", icon: <ShieldIcon /> },
+  { number: "04", title: "Future Vision", text: "Continue improving livestock water infrastructure through focused innovation.", icon: <FlowIcon /> },
+];
+
 export default function AboutPage() {
-  return <main className="inner-page">
-    <section className="page-hero about-hero"><div className="page-shell"><div className="section-label light"><span>About</span> Wise Saturn</div><h1>Practical thinking<br/>for Australian farms.</h1><p>Wise Saturn is focused on improving a routine piece of livestock infrastructure: the water trough.</p></div></section>
-    <section className="about-story page-shell"><div><span className="overline">Our focus</span><h2>Less complexity.<br/>Better daily operation.</h2></div><div><p className="large-copy">We believe farm equipment should solve a clear problem, stand up to daily use and remain straightforward to understand.</p><p>Wise Saturn applies that thinking to livestock water trough maintenance—supporting cleaner water routines while reducing repetitive work.</p></div></section>
-    <section className="values page-shell"><article><WaterIcon/><span>01</span><h3>Animal water</h3><p>Support a cleaner, more consistent livestock watering environment.</p></article><article><FarmIcon/><span>02</span><h3>Farm practicality</h3><p>Design around real operating conditions and straightforward use.</p></article><article><ShieldIcon/><span>03</span><h3>Clear ownership</h3><p>Keep the product understandable, serviceable and easy to discuss.</p></article></section>
-    <section className="page-cta page-shell"><h2>Talk directly with<br/>Wise Saturn Australia.</h2><Link className="button button-dark" href="/contact">Contact us <ArrowIcon/></Link></section>
+  return <main className="inner-page about-page-complete">
+    <section className="about-overview">
+      <div className="about-overview-copy"><div className="section-label light"><span>About</span> Wise Saturn Australia</div><h1>Practical Innovation<br/>for Australian Farms.</h1><p>Wise Saturn is an Australian livestock water systems company focused on improving one essential piece of farm infrastructure: the water trough.</p></div>
+      <div className="about-overview-image"><img src="/images/homepage/hero/wise-saturn-homepage-hero.png" alt="Wise Saturn livestock water trough on an Australian farm" /></div>
+    </section>
+    <section className="about-introduction page-shell"><div><span className="overline">Company Introduction</span><h2>A clear problem.<br/>A practical response.</h2></div><div><p className="large-copy">Livestock water troughs are essential, but keeping them clean can require repetitive work across a property.</p><p>Wise Saturn applies straightforward product thinking to that routine. The automatic self-cleaning trough is designed to support cleaner drinking water while reducing the maintenance burden for cattle and sheep operations.</p></div></section>
+    <section className="about-principles page-shell"><div className="section-label"><span>01</span> What Guides Us</div><div className="about-principle-grid">{principles.map(item => <article key={item.number}><div>{item.icon}<span>{item.number}</span></div><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></section>
+    <section className="about-vision"><div className="page-shell"><div className="section-label light"><span>02</span> Looking Ahead</div><div className="about-vision-layout"><h2>Better water systems.<br/>Built around the farm.</h2><p>Our direction remains focused: develop practical technology that makes livestock water management more consistent, less labour-intensive and easier to maintain over time.</p></div></div></section>
+    <section className="about-bottom-cta page-shell"><h2>Talk Directly with<br/>Wise Saturn Australia.</h2><Link className="button button-dark" href="/contact">Contact Us <ArrowIcon /></Link></section>
   </main>;
 }
-

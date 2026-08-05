@@ -14,8 +14,13 @@ export default function Home() {
       <img className="hero-media" src="/images/homepage/hero/wise-saturn-homepage-hero.png" alt="Wise Saturn livestock water trough with cattle and sheep on an Australian farm" />
       <div className="hero-shade" />
       <div className="hero-content page-shell">
-        <p className="eyebrow light"><span>Australian livestock water systems</span></p>
-        <h1>Automatic Self-Cleaning<br/>Livestock Water Trough</h1>
+        <p className="eyebrow light"><span>Patent-Pending Self-Cleaning Technology</span></p>
+        <h1>
+          <span className="hero-title-desktop">Automatic Self-Cleaning</span>
+          <span className="hero-title-mobile"><span>Automatic</span><span>Self-Cleaning</span></span>
+          <span className="hero-title-product">Livestock Water Trough</span>
+        </h1>
+        <p className="hero-audience">For Cattle &amp; Sheep Farms</p>
         <p className="hero-sub">Cleaner Water.<br/>Healthier Livestock.<br/>Less Maintenance.</p>
         <div className="hero-actions"><Link className="button button-white" href="/videos"><PlayIcon/> Watch Demo</Link><Link className="button button-outline" href="/contact">Contact Us <ArrowIcon/></Link></div>
       </div>
@@ -55,4 +60,3 @@ export default function Home() {
     <section className="contact-strip page-shell"><p>Ready to discuss your property?</p><Link href="/contact">Contact Wise Saturn <ArrowIcon/></Link></section>
   </main>;
 }
-
