@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowIcon, CleanIcon, FarmIcon, FlowIcon, LabourIcon, ShieldIcon, WaterIcon } from "../components/Icons";
+import Image from "next/image";
+import { ArrowIcon, CleanIcon, FlowIcon, LabourIcon, ShieldIcon, WaterIcon } from "../components/Icons";
 
 export const metadata: Metadata = {
   title: "Technology",
   description: "How the Wise Saturn automatic cleaning approach supports livestock trough maintenance.",
+  alternates: { canonical: "/technology" },
 };
 
 const processSteps = [
@@ -35,7 +37,7 @@ export default function TechnologyPage() {
         <h1>Automatic Cleaning.<br/>Built Into the Routine.</h1>
         <p>Wise Saturn uses a timed cleaning cycle to remove settled sediment and waste from the trough, helping maintain cleaner livestock drinking water with less manual maintenance.</p>
       </div>
-      <div className="technology-overview-image"><img src="/images/products/main-product/studio/water-trough-main-front.png" alt="Wise Saturn automatic self-cleaning livestock water trough" /></div>
+      <div className="technology-overview-image"><Image src="/images/products/main-product/studio/water-trough-main-front.png" alt="Wise Saturn automatic self-cleaning livestock water trough" width={1400} height={900} sizes="(max-width: 1040px) 100vw, 54vw" /></div>
     </section>
 
     <section className="technology-process page-shell">
@@ -57,8 +59,10 @@ export default function TechnologyPage() {
       </div>
     </section>
 
+    <section className="technology-water page-shell"><div><div className="section-label"><span>03</span> Water Circulation</div><h2>Movement with<br/>a clear purpose.</h2></div><div className="water-diagram" aria-label="Water circulation sequence"><div><WaterIcon/><b>Fresh water enters</b><span>Maintains the operating water level.</span></div><ArrowIcon/><div><FlowIcon/><b>Water is directed</b><span>Movement guides settled material toward the outlet.</span></div><ArrowIcon/><div><CleanIcon/><b>Waste exits</b><span>The cleaning cycle flushes material away.</span></div></div></section>
+
     <section className="technology-comparison page-shell">
-      <div className="section-label"><span>03</span> Before and After</div>
+      <div className="section-label"><span>04</span> Conventional Comparison</div>
       <div className="technology-heading"><h2>A clearer cleaning<br/>routine.</h2><p>A simple comparison of the trough before and after the automatic cycle.</p></div>
       <div className="technology-comparison-grid">
         <article><span>Traditional Trough Routine</span><div className="comparison-mark"><WaterIcon /></div><h3>Manual cleaning.</h3><p>Sediment and waste settle at the bottom and require periodic manual removal.</p></article>
@@ -68,18 +72,20 @@ export default function TechnologyPage() {
     </section>
 
     <section className="technology-innovation page-shell">
-      <div><div className="section-label"><span>04</span> Patent and Innovation</div><h2>Patent-Pending<br/>Self-Cleaning Technology.</h2></div>
-      <div><ShieldIcon /><p>Wise Saturn's patent-pending approach brings automatic cleaning into the normal operating routine of a livestock trough. The focus is practical innovation: cleaner water management, protected components and reduced repetitive maintenance.</p></div>
+      <div><div className="section-label"><span>05</span> Patent and Innovation</div><h2>Patent-Pending<br/>Self-Cleaning Technology.</h2></div>
+      <div><ShieldIcon /><p>Wise Saturn&apos;s patent-pending approach brings automatic cleaning into the normal operating routine of a livestock trough. The focus is practical innovation: cleaner water management, protected components and reduced repetitive maintenance.</p></div>
     </section>
 
     <section className="technology-farm">
-      <div className="technology-farm-image"><img src="/images/products/main-product/studio/water-trough-main-angle.png" alt="Wise Saturn trough angled studio view" /></div>
+      <div className="technology-farm-image"><Image src="/images/products/main-product/studio/water-trough-main-angle.png" alt="Wise Saturn trough angled studio view" width={1400} height={900} sizes="(max-width: 1040px) 100vw, 60vw" /></div>
       <div className="technology-farm-copy">
-        <div className="section-label light"><span>05</span> Designed for Farm Conditions</div>
+        <div className="section-label light"><span>06</span> Designed for Farm Conditions</div>
         <h2>Practical by design.</h2>
         <ul>{farmConditions.map((item, index) => <li key={item}><span>0{index + 1}</span>{item}</li>)}</ul>
       </div>
     </section>
+
+    <section className="technology-health page-shell"><div className="section-label"><span>07</span> Livestock Health</div><div className="technology-heading"><h2>Cleaner water supports<br/>better daily wellbeing.</h2><p>Reducing sediment, organic build-up and stale water conditions supports a more appealing drinking source. Reliable access to cleaner water is an important part of livestock hydration, feed intake and general welfare.</p></div></section>
 
     <section className="technology-bottom-cta page-shell">
       <h2>A Smarter Approach<br/>to Trough Maintenance.</h2>

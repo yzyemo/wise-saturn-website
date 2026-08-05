@@ -2,94 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowIcon, CleanIcon, FarmIcon, FlowIcon, LabourIcon, ShieldIcon, WaterIcon } from "../components/Icons";
 
-export const metadata: Metadata = {
-  title: "Product",
-  description: "Explore the Wise Saturn automatic self-cleaning livestock water trough.",
-};
+export const metadata: Metadata = { title: "Automatic Self-Cleaning Livestock Water Trough", description: "Product features, specifications, applications and maintenance information for the Wise Saturn livestock water trough.", alternates: { canonical: "/product" } };
+const benefits = [["Automatically removes sediment","A timed cycle moves settled material out through the drain system.",<CleanIcon key="c"/>],["Cleaner drinking water","Regular cleaning supports a fresher drinking environment.",<WaterIcon key="w"/>],["Reduced algae build-up","Less settled organic material helps simplify routine water management.",<ShieldIcon key="s"/>],["Lower maintenance","Reduce repetitive manual emptying and scrubbing across the property.",<LabourIcon key="l"/>],["Cattle and sheep ready","A practical low-profile form supports mixed livestock operations.",<FlowIcon key="f"/>],["Designed for Australian farms","Purposeful construction for real livestock watering routines.",<FarmIcon key="a"/>]];
+const specs = [["Material","Durable farm-ready construction"],["Capacity","Confirmed for the selected model"],["Drain system","Automatic waste-flushing outlet"],["Cleaning cycle","Adjustable timed operation"],["Power supply","Installation-specific"],["Suitable animals","Cattle and sheep"],["Installation","Property assessment recommended"]];
+const faqs = [["How often does the trough clean?","Cleaning frequency is selected to suit livestock numbers, water conditions and the property routine."],["Can it be used for cattle and sheep?","Yes. The trough is intended for Australian cattle and sheep operations."],["Does it eliminate all maintenance?","It substantially reduces repetitive cleaning, while normal inspections and scheduled servicing remain important."],["How is installation planned?","Wise Saturn reviews the site, water supply, drainage and operating requirements before confirming the setup."]];
 
-const benefits = [
-  { title: "Automatically removes sediment", icon: <CleanIcon /> },
-  { title: "Cleaner drinking water", icon: <WaterIcon /> },
-  { title: "Reduces algae build-up", icon: <ShieldIcon /> },
-  { title: "Lower maintenance", icon: <LabourIcon /> },
-  { title: "Suitable for cattle and sheep", icon: <FlowIcon /> },
-  { title: "Designed for Australian farms", icon: <FarmIcon /> },
-];
-
-const specifications = [
-  ["Material", "Durable farm-ready construction"],
-  ["Capacity", "Model-specific — contact Wise Saturn"],
-  ["Drain System", "Automatic waste-flushing outlet"],
-  ["Cleaning Cycle", "Timed automatic cycle"],
-  ["Power Supply", "Installation-specific"],
-  ["Suitable Animals", "Cattle and sheep"],
-  ["Installation", "Property assessment recommended"],
-];
-
-export default function ProductPage() {
-  return <main className="inner-page product-page">
-    <section className="product-overview page-shell">
-      <div className="product-overview-image">
-        <img src="/images/products/main-product/studio/water-trough-main-angle.png" alt="Wise Saturn automatic self-cleaning livestock water trough" />
-      </div>
-      <div className="product-overview-copy">
-        <div className="section-label"><span>Product</span> Wise Saturn water trough</div>
-        <h1><span>Automatic Self-Cleaning</span><span>Livestock Water Trough</span></h1>
-        <p>Designed for Australian cattle and sheep farms to provide cleaner drinking water with significantly reduced maintenance.</p>
-        <div className="product-overview-badges" aria-label="Product highlights">
-          <span>Automatic Cleaning</span><span>Cleaner Water</span><span>Cattle &amp; Sheep</span><span>Low Maintenance</span>
-        </div>
-        <div className="product-overview-actions">
-          <Link className="button button-dark product-overview-cta" href="/contact">Contact Us <ArrowIcon /></Link>
-          <a className="button product-brochure-button" href="/documents/brochures/wise-saturn-product-brochure.pdf" download>Download Brochure <ArrowIcon /></a>
-        </div>
-      </div>
-    </section>
-
-    <section className="product-benefits page-shell">
-      <div className="section-label"><span>01</span> Key Benefits</div>
-      <div className="product-section-heading"><h2>Practical outcomes.<br/>Built into the product.</h2><p>Six clear benefits designed around cleaner water, easier upkeep and everyday livestock use.</p></div>
-      <div className="product-benefit-grid">
-        {benefits.map((benefit, index) => <article key={benefit.title}><div><span>0{index + 1}</span>{benefit.icon}</div><h3>{benefit.title}</h3></article>)}
-      </div>
-    </section>
-
-    <section className="product-how">
-      <div className="page-shell">
-        <div className="section-label light"><span>02</span> How It Works</div>
-        <div className="product-how-heading"><h2>A simple automatic cycle.</h2><p>Cleaning is handled in three straightforward stages.</p></div>
-        <div className="product-steps">
-          <article><span>01</span><h3>Sediment settles naturally.</h3></article>
-          <div className="product-step-arrow" aria-hidden="true">↓</div>
-          <article><span>02</span><h3>Timed cleaning cycle activates.</h3></article>
-          <div className="product-step-arrow" aria-hidden="true">↓</div>
-          <article><span>03</span><h3>Waste is flushed away automatically.</h3></article>
-        </div>
-      </div>
-    </section>
-
-    <section className="product-applications page-shell">
-      <div className="section-label"><span>03</span> Applications</div>
-      <div className="product-section-heading"><h2>One system.<br/>Two livestock settings.</h2><p>Purposeful water access for cattle and sheep operations.</p></div>
-      <div className="application-grid">
-        <article><div className="application-image cattle"><img src="/images/homepage/hero/wise-saturn-homepage-hero.png" alt="Wise Saturn trough in a cattle installation" /></div><div><span>01</span><h3>Cattle Installation</h3></div></article>
-        <article><div className="application-image sheep"><img src="/images/homepage/hero/wise-saturn-homepage-hero.png" alt="Wise Saturn trough in a sheep installation" /></div><div><span>02</span><h3>Sheep Installation</h3></div></article>
-      </div>
-    </section>
-
-    <section className="product-specifications page-shell">
-      <div className="section-label"><span>04</span> Specifications</div>
-      <div className="product-spec-layout">
-        <div><h2>Product details at a glance.</h2><p>Final specifications are confirmed for the selected model and installation.</p></div>
-        <div className="spec-table" role="table" aria-label="Wise Saturn product specifications">
-          {specifications.map(([label, value]) => <div className="spec-row" role="row" key={label}><div role="rowheader">{label}</div><div role="cell">{value}</div></div>)}
-        </div>
-      </div>
-    </section>
-
-    <section className="product-bottom-cta page-shell">
-      <p>Ready to improve livestock water quality?</p>
-      <Link className="button button-dark" href="/contact">Contact Us <ArrowIcon /></Link>
-    </section>
-  </main>;
-}
+export default function ProductPage(){return <main className="inner-page product-page">
+<section className="product-overview page-shell"><div className="product-overview-image"><img src="/images/products/main-product/studio/water-trough-main-angle.png" alt="Wise Saturn automatic self-cleaning livestock water trough, angled view" width="1400" height="900"/></div><div className="product-overview-copy"><div className="section-label"><span>Product</span> Wise Saturn water trough</div><h1><span>Automatic Self-Cleaning</span><span>Livestock Water Trough</span></h1><p>Designed for Australian cattle and sheep farms to provide cleaner drinking water with significantly reduced maintenance.</p><div className="product-overview-badges"><span>Automatic Cleaning</span><span>Cleaner Water</span><span>Cattle &amp; Sheep</span><span>Low Maintenance</span></div><div className="product-overview-actions"><Link className="button button-dark product-overview-cta" href="/contact">Contact Us <ArrowIcon/></Link><a className="button product-brochure-button" href="/documents/brochures/wise-saturn-product-brochure.pdf" download>Download Brochure <ArrowIcon/></a></div></div></section>
+<section className="product-benefits page-shell"><div className="section-label"><span>01</span> Overview &amp; Benefits</div><div className="product-section-heading"><h2>Practical outcomes.<br/>Built into the product.</h2><p>A focused system for cleaner water, straightforward operation and less repetitive labour.</p></div><div className="product-benefit-grid">{benefits.map(([title,text,icon],i)=><article key={title as string}><div><span>0{i+1}</span>{icon}</div><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+<section className="product-how"><div className="page-shell"><div className="section-label light"><span>02</span> Installation &amp; Operation</div><div className="product-how-heading"><h2>A simple automatic cycle.</h2><p>Following a property assessment, the trough connects to the site water, drainage and selected power arrangement.</p></div><div className="product-steps"><article><span>01</span><h3>Sediment settles naturally.</h3></article><div className="product-step-arrow" aria-hidden="true">&#8595;</div><article><span>02</span><h3>Timed cleaning cycle activates.</h3></article><div className="product-step-arrow" aria-hidden="true">&#8595;</div><article><span>03</span><h3>Waste is flushed away automatically.</h3></article></div></div></section>
+<section className="product-applications page-shell"><div className="section-label"><span>03</span> Applications</div><div className="product-section-heading"><h2>One system.<br/>Two livestock settings.</h2><p>Purposeful water access for cattle and sheep operations.</p></div><div className="application-grid"><article><div className="application-image cattle"><img loading="lazy" src="/images/homepage/hero/wise-saturn-homepage-hero.png" alt="Wise Saturn trough in a cattle installation"/></div><div><span>01</span><h3>Cattle Installation</h3></div></article><article><div className="application-image sheep"><img loading="lazy" src="/images/homepage/hero/wise-saturn-homepage-hero.png" alt="Wise Saturn trough in a sheep installation"/></div><div><span>02</span><h3>Sheep Installation</h3></div></article></div></section>
+<section className="product-technical page-shell"><div><div className="section-label"><span>04</span> Technical Highlights</div><h2>Serviceable by design.</h2></div><div className="technical-list"><article><ShieldIcon/><h3>Protected components</h3><p>Working systems are housed away from normal livestock access.</p></article><article><FlowIcon/><h3>Directed flushing</h3><p>The cleaning sequence moves settled waste toward the discharge point.</p></article><article><LabourIcon/><h3>Planned maintenance</h3><p>Routine visual checks and scheduled servicing keep operation dependable.</p></article></div></section>
+<section className="product-specifications page-shell"><div className="section-label"><span>05</span> Specifications</div><div className="product-spec-layout"><div><h2>Product details at a glance.</h2><p>Final specifications are confirmed for the selected model and installation.</p></div><div className="spec-table" role="table">{specs.map(([l,v])=><div className="spec-row" role="row" key={l}><div role="rowheader">{l}</div><div role="cell">{v}</div></div>)}</div></div></section>
+<section className="product-gallery page-shell"><div className="section-label"><span>06</span> Product Gallery</div><div className="gallery-grid"><img loading="lazy" src="/images/products/main-product/studio/water-trough-main-front.png" alt="Wise Saturn trough front studio view"/><img loading="lazy" src="/images/products/main-product/studio/water-trough-main-angle.png" alt="Wise Saturn trough angled studio view"/></div></section>
+<section className="product-faq page-shell"><div className="section-label"><span>07</span> Frequently Asked Questions</div><div className="faq-layout"><h2>Useful answers<br/>before you enquire.</h2><div>{faqs.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></div></section>
+<section className="brochure-band page-shell"><div><span className="overline">Product Brochure</span><h2>Keep the product details on hand.</h2><p>Download the current Wise Saturn product brochure for an introduction to the system.</p></div><a className="button button-dark" href="/documents/brochures/wise-saturn-product-brochure.pdf" download>Download Brochure <ArrowIcon/></a></section>
+<section className="product-bottom-cta page-shell"><p>Ready to improve livestock water quality?</p><Link className="button button-dark" href="/contact">Contact Us <ArrowIcon/></Link></section>
+</main>}

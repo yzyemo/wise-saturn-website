@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowIcon, PlayIcon } from "../components/Icons";
 
-export const metadata: Metadata = { title: "Videos", description: "Watch the Wise Saturn livestock water trough in action." };
+export const metadata: Metadata = { title: "Videos", description: "Watch the Wise Saturn product overview, cleaning cycle, installations and customer trials.", alternates: { canonical: "/videos" } };
 
 const upcomingVideos = [
   ["01", "Cleaning Cycle", "A closer look at the automatic cleaning sequence."],
@@ -20,7 +21,7 @@ export default function VideosPage() {
         <p>See the Wise Saturn livestock water trough and learn how the system fits into practical farm operations.</p>
         <a className="button button-white dark-text" href="#featured-video"><PlayIcon /> Watch Video</a>
       </div>
-      <div className="videos-overview-image"><img src="/images/homepage/hero/wise-saturn-homepage-hero.png" alt="Wise Saturn water trough with livestock on an Australian farm" /></div>
+      <div className="videos-overview-image"><Image src="/images/homepage/hero/wise-saturn-homepage-hero.png" alt="Wise Saturn water trough with livestock on an Australian farm" width={1920} height={1080} sizes="(max-width: 1040px) 100vw, 62vw" /></div>
     </section>
 
     <section className="videos-featured page-shell" id="featured-video">
@@ -34,7 +35,7 @@ export default function VideosPage() {
       <div className="page-shell">
         <div className="section-label light"><span>02</span> Field Video Library</div>
         <div className="videos-heading light"><h2>More from the field.</h2><p>Additional demonstrations and installation videos will be added as they become available.</p></div>
-        <div className="videos-library-grid">{upcomingVideos.map(([number, title, text]) => <article key={title}><div><span>{number}</span><PlayIcon /></div><div><small>Coming Soon</small><h3>{title}</h3><p>{text}</p></div></article>)}</div>
+        <div className="videos-library-grid">{upcomingVideos.map(([number, title, text]) => <article key={title}><div className="library-video"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/2WqtQojcaEk?rel=0" title={`${title} video`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div><div><small>Video {number}</small><h3>{title}</h3><p>{text}</p></div></article>)}</div>
       </div>
     </section>
 

@@ -1,17 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowIcon, CleanIcon, FarmIcon, LabourIcon, PlayIcon, WaterIcon } from "./components/Icons";
 
 const features = [
   { title: "Automatic Cleaning", text: "A scheduled cleaning cycle helps move settled waste from the trough.", icon: <CleanIcon /> },
   { title: "Cleaner Water", text: "Regular turnover supports cleaner water for cattle and sheep.", icon: <WaterIcon /> },
-  { title: "Less Labour", text: "Reduce repetitive trough-cleaning work across the property.", icon: <LabourIcon /> },
-  { title: "Built for Australian Farms", text: "A practical system designed around real livestock operations.", icon: <FarmIcon /> },
+  { title: "Healthier Livestock", text: "Cleaner drinking water supports the daily health and wellbeing of livestock.", icon: <FarmIcon /> },
+  { title: "Lower Maintenance", text: "Reduce repetitive trough-cleaning work across the property.", icon: <LabourIcon /> },
 ];
 
 export default function Home() {
   return <main>
     <section className="home-hero">
-      <img className="hero-media" src="/images/homepage/hero/wise-saturn-homepage-hero.png" alt="Wise Saturn livestock water trough with cattle and sheep on an Australian farm" />
+      <Image className="hero-media" src="/images/homepage/hero/wise-saturn-homepage-hero.png" alt="Wise Saturn livestock water trough with cattle and sheep on an Australian farm" fill priority sizes="100vw" />
       <div className="hero-shade" />
       <div className="hero-content page-shell">
         <p className="eyebrow light"><span>Patent-Pending Self-Cleaning Technology</span></p>
@@ -21,8 +22,8 @@ export default function Home() {
           <span className="hero-title-product">Livestock Water Trough</span>
         </h1>
         <p className="hero-audience">For Cattle &amp; Sheep Farms</p>
-        <p className="hero-sub">Cleaner Water.<br/>Healthier Livestock.<br/>Less Maintenance.</p>
-        <div className="hero-actions"><Link className="button button-white" href="/videos"><PlayIcon/> Watch Demo</Link><Link className="button button-outline" href="/contact">Contact Us <ArrowIcon/></Link></div>
+        <ul className="hero-points"><li>Automatic Cleaning</li><li>Cleaner Water</li><li>Healthier Livestock</li><li>Lower Maintenance</li></ul>
+        <div className="hero-actions"><Link className="button button-white" href="/videos"><PlayIcon/> Watch Demo</Link><Link className="button button-outline" href="/contact?enquiry=trial">Request a Trial <ArrowIcon/></Link></div>
       </div>
       <div className="hero-index"><span>WISE SATURN</span><b>01</b></div>
     </section>
@@ -43,7 +44,7 @@ export default function Home() {
         <ul><li>Long drinking edge</li><li>Protected system components</li><li>Designed for cattle and sheep</li></ul>
         <Link className="button button-white dark-text" href="/product">View the product <ArrowIcon/></Link>
       </div>
-      <div className="product-image-wrap"><img src="/images/products/main-product/studio/water-trough-main-angle.png" alt="Wise Saturn water trough, angled studio view" /></div>
+      <div className="product-image-wrap"><Image src="/images/products/main-product/studio/water-trough-main-angle.png" alt="Wise Saturn water trough, angled studio view" width={1400} height={900} sizes="(max-width: 760px) 100vw, 60vw" /></div>
     </section>
 
     <section className="features-section page-shell">
