@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 const processSteps = [
-  { number: "01", title: "Sediment Settles", text: "Sediment and livestock waste naturally collect at the bottom of the trough.", icon: <WaterIcon /> },
-  { number: "02", title: "Cleaning Cycle Activates", text: "The system begins a scheduled automatic cleaning cycle.", icon: <CleanIcon /> },
-  { number: "03", title: "Waste Is Flushed Away", text: "Settled material is discharged through the drain system.", icon: <FlowIcon /> },
+  { number: "01", title: "Before Cleaning", text: "Sediment and livestock waste naturally collect at the bottom of the trough.", icon: <WaterIcon /> },
+  { number: "02", title: "Cleaning Cycle", text: "The timed bottom-cleaning system activates and directs water toward the outlet.", icon: <CleanIcon /> },
+  { number: "03", title: "After Cleaning", text: "Settled material is discharged, leaving a cleaner drinking environment.", icon: <FlowIcon /> },
 ];
 
 const coreTechnology = [
@@ -70,6 +70,8 @@ export default function TechnologyPage() {
         <article><span>Wise Saturn Automatic Cycle</span><div className="comparison-mark"><CleanIcon /></div><h3>Scheduled cleaning.</h3><p>The automatic cycle removes settled material and refreshes the water environment with less routine intervention.</p></article>
       </div>
     </section>
+
+    <section className="bottom-cleaning-system"><div className="page-shell"><div className="section-label light"><span>05</span> Bottom Cleaning System</div><div className="technology-heading light"><h2>Cleaning starts<br/>where waste settles.</h2><p>The trough is shaped around controlled sediment movement. During the cycle, directed flow carries settled material to the protected discharge point without manually emptying the entire trough.</p></div><div className="bottom-system-visual"><Image src="/images/products/main-product/studio/water-trough-main-front.png" alt="Front view showing the Wise Saturn trough bottom profile" width={1400} height={900} sizes="(max-width:760px) 100vw, 55vw"/><div><span>01</span><b>Settling zone</b><p>Waste collects below the livestock drinking area.</p><span>02</span><b>Directed outlet</b><p>The cleaning cycle carries sediment to the discharge point.</p></div></div></div></section>
 
     <section className="technology-innovation page-shell">
       <div><div className="section-label"><span>05</span> Patent and Innovation</div><h2>Patent-Pending<br/>Self-Cleaning Technology.</h2></div>

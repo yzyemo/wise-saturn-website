@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowIcon, CleanIcon, FarmIcon, LabourIcon, PlayIcon, WaterIcon } from "./components/Icons";
+import { ArrowIcon, CleanIcon, FarmIcon, PlayIcon, ShieldIcon, WaterIcon } from "./components/Icons";
 
 const features = [
-  { title: "Automatic Cleaning", text: "A scheduled cleaning cycle helps move settled waste from the trough.", icon: <CleanIcon /> },
-  { title: "Cleaner Water", text: "Regular turnover supports cleaner water for cattle and sheep.", icon: <WaterIcon /> },
-  { title: "Healthier Livestock", text: "Cleaner drinking water supports the daily health and wellbeing of livestock.", icon: <FarmIcon /> },
-  { title: "Lower Maintenance", text: "Reduce repetitive trough-cleaning work across the property.", icon: <LabourIcon /> },
+  { title: "Automatic Cleaning", text: "A scheduled cycle moves settled waste out of the trough.", icon: <CleanIcon /> },
+  { title: "Water Saving", text: "Targeted cleaning supports more efficient livestock water management.", icon: <WaterIcon /> },
+  { title: "Heavy Duty Construction", text: "A robust, serviceable form designed for daily farm use.", icon: <ShieldIcon /> },
+  { title: "Australian Designed", text: "Developed around Australian cattle and sheep operations.", icon: <FarmIcon /> },
 ];
 
 export default function Home() {
@@ -17,13 +17,11 @@ export default function Home() {
       <div className="hero-content page-shell">
         <p className="eyebrow light"><span>Patent-Pending Self-Cleaning Technology</span></p>
         <h1>
-          <span className="hero-title-desktop">Automatic Self-Cleaning</span>
-          <span className="hero-title-mobile"><span>Automatic</span><span>Self-Cleaning</span></span>
-          <span className="hero-title-product">Livestock Water Trough</span>
+          <span>Automatic</span><span>Self-Cleaning Water Trough</span>
         </h1>
         <p className="hero-audience">For Cattle &amp; Sheep Farms</p>
-        <ul className="hero-points"><li>Automatic Cleaning</li><li>Cleaner Water</li><li>Healthier Livestock</li><li>Lower Maintenance</li></ul>
-        <div className="hero-actions"><Link className="button button-white" href="/videos"><PlayIcon/> Watch Demo</Link><Link className="button button-outline" href="/contact?enquiry=trial">Request a Trial <ArrowIcon/></Link></div>
+        <ul className="hero-points"><li>Cleaner Water</li><li>Automatic Cleaning</li><li>Healthier Livestock</li><li>Lower Labour Costs</li></ul>
+        <div className="hero-actions"><Link className="button button-white" href="/videos"><PlayIcon/> Watch Demo</Link><Link className="button button-outline" href="/contact?enquiry=quote">Request a Quote <ArrowIcon/></Link></div>
       </div>
       <div className="hero-index"><span>WISE SATURN</span><b>01</b></div>
     </section>

@@ -18,5 +18,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${geist.variable} ${mono.variable}`}><SiteHeader />{children}<SiteFooter /></body></html>;
+  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "Wise Saturn", url: "https://wise-saturn-website-eight.vercel.app", logo: "https://wise-saturn-website-eight.vercel.app/brand/logo/wise-saturn-logo-primary.png", email: "peixing@hotmail.com", telephone: "+61435694228", areaServed: "Australia", description: "Automatic self-cleaning livestock water troughs for Australian cattle and sheep farms." };
+  return <html lang="en"><body className={`${geist.variable} ${mono.variable}`}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}/><SiteHeader />{children}<SiteFooter /></body></html>;
 }

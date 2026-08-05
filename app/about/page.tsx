@@ -6,10 +6,10 @@ import { ArrowIcon, FarmIcon, FlowIcon, ShieldIcon, WaterIcon } from "../compone
 export const metadata: Metadata = { title: "About", description: "Wise Saturn is an Australian livestock water technology company focused on practical, patent-pending innovation.", alternates: { canonical: "/about" } };
 
 const principles = [
-  { number: "01", title: "Australian Innovation", text: "Developing practical livestock water systems around Australian farm conditions.", icon: <FarmIcon /> },
-  { number: "02", title: "Our Mission", text: "Support cleaner livestock water with less repetitive trough maintenance.", icon: <WaterIcon /> },
-  { number: "03", title: "Quality", text: "Keep the product purposeful, understandable and suited to daily use.", icon: <ShieldIcon /> },
-  { number: "04", title: "Future Vision", text: "Continue improving livestock water infrastructure through focused innovation.", icon: <FlowIcon /> },
+  { number: "01", title: "Australian Designed", text: "Developed around Australian weather, livestock and farm routines.", icon: <FarmIcon /> },
+  { number: "02", title: "Patent Pending", text: "A focused self-cleaning approach developed to improve trough upkeep.", icon: <ShieldIcon /> },
+  { number: "03", title: "Cattle & Sheep Farms", text: "Purpose-built for Australian cattle and sheep operations.", icon: <WaterIcon /> },
+  { number: "04", title: "Reliable & Low Maintenance", text: "Protected components and straightforward servicing support dependable use.", icon: <FlowIcon /> },
 ];
 
 export default function AboutPage() {

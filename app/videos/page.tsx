@@ -26,12 +26,13 @@ export default function VideosPage() {
 
     <section className="videos-featured page-shell" id="featured-video">
       <div className="section-label"><span>01</span> Featured Video</div>
+      <nav className="video-nav-tabs" aria-label="Video categories"><a className="active" href="#featured-video">Overview</a><a href="#video-library">Cleaning Cycle</a><a href="#video-library">Cattle Installation</a><a href="#video-library">Sheep Installation</a><a href="#video-library">Customer Trial</a></nav>
       <div className="videos-heading"><h2>Product Overview.</h2><p>An introduction to the Wise Saturn trough, its working form and its place in livestock operations.</p></div>
       <div className="videos-player"><iframe src="https://www.youtube.com/embed/2WqtQojcaEk?rel=0" title="Watch the Wise Saturn product in action" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div>
       <div className="videos-player-caption"><div><span>01</span><h3>Wise Saturn Product Overview</h3></div><a href="https://www.youtube.com/watch?v=2WqtQojcaEk" target="_blank" rel="noreferrer">Open on YouTube <ArrowIcon /></a></div>
     </section>
 
-    <section className="videos-library">
+    <section className="videos-library" id="video-library">
       <div className="page-shell">
         <div className="section-label light"><span>02</span> Field Video Library</div>
         <div className="videos-heading light"><h2>More from the field.</h2><p>Additional demonstrations and installation videos will be added as they become available.</p></div>
