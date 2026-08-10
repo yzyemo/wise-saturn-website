@@ -1,27 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowIcon, FarmIcon, FlowIcon, ShieldIcon, WaterIcon } from "../components/Icons";
+import Link from "next/link";
+import { ArrowIcon } from "../components/Icons";
 
-export const metadata: Metadata = { title: "About", description: "Wise Saturn is an Australian livestock water technology company focused on practical, patent-pending innovation.", alternates: { canonical: "/about" } };
-
-const principles = [
-  { number: "01", title: "Australian Designed", text: "Developed around Australian weather, livestock and farm routines.", icon: <FarmIcon /> },
-  { number: "02", title: "Patent Pending", text: "A focused self-cleaning approach developed to improve trough upkeep.", icon: <ShieldIcon /> },
-  { number: "03", title: "Cattle & Sheep Farms", text: "Purpose-built for Australian cattle and sheep operations.", icon: <WaterIcon /> },
-  { number: "04", title: "Reliable & Low Maintenance", text: "Protected components and straightforward servicing support dependable use.", icon: <FlowIcon /> },
-];
-
-export default function AboutPage() {
-  return <main className="inner-page about-page-complete">
-    <section className="about-overview">
-      <div className="about-overview-copy"><div className="section-label light"><span>About</span> Wise Saturn Australia</div><h1>Practical Innovation<br/>for Australian Farms.</h1><p>Wise Saturn is an Australian livestock water systems company focused on improving one essential piece of farm infrastructure: the water trough.</p></div>
-      <div className="about-overview-image"><Image src="/images/homepage/hero/wise-saturn-homepage-hero.png" alt="Wise Saturn livestock water trough on an Australian farm" width={1920} height={1080} sizes="(max-width: 1040px) 100vw, 58vw" /></div>
-    </section>
-    <section className="about-introduction page-shell"><div><span className="overline">Company Introduction</span><h2>A clear problem.<br/>A practical response.</h2></div><div><p className="large-copy">Livestock water troughs are essential, but keeping them clean can require repetitive work across a property.</p><p>Wise Saturn applies straightforward product thinking to that routine. The automatic self-cleaning trough is designed to support cleaner drinking water while reducing the maintenance burden for cattle and sheep operations.</p></div></section>
-    <section className="about-principles page-shell"><div className="section-label"><span>01</span> What Guides Us</div><div className="about-principle-grid">{principles.map(item => <article key={item.number}><div>{item.icon}<span>{item.number}</span></div><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></section>
-    <section className="about-focus page-shell"><div><div className="section-label"><span>02</span> Industry Focus</div><h2>Built for livestock<br/>water management.</h2></div><div><p>Wise Saturn concentrates on cattle and sheep operations where dependable water infrastructure and efficient property maintenance matter every day.</p><h3>Why choose Wise Saturn</h3><ul><li>Patent-pending self-cleaning technology</li><li>Australian product development</li><li>Focused cattle and sheep application</li><li>Direct product and installation support</li></ul></div></section>
-    <section className="about-vision"><div className="page-shell"><div className="section-label light"><span>03</span> Looking Ahead</div><div className="about-vision-layout"><h2>Better water systems.<br/>Built around the farm.</h2><p>Our direction remains focused: develop practical technology that makes livestock water management more consistent, less labour-intensive and easier to maintain over time.</p></div></div></section>
-    <section className="about-bottom-cta page-shell"><h2>Talk Directly with<br/>Wise Saturn Australia.</h2><Link className="button button-dark" href="/contact">Contact Us <ArrowIcon /></Link></section>
-  </main>;
-}
+export const metadata:Metadata={title:"Why This Product Exists",description:"The practical farm problem behind the Wise Saturn self-cleaning water trough.",alternates:{canonical:"/about"}};
+export default function AboutPage(){return <main className="inner-page about-page"><section className="about-overview"><div className="about-overview-copy"><div className="section-label light"><span>About</span> Why this product exists</div><h1>A practical problem.<br/>A practical invention.</h1><p>Wise Saturn began with the repetitive work of keeping livestock water troughs clean.</p></div><div className="about-overview-image"><Image src="/images/homepage/hero/wise-saturn-homepage-hero.png" alt="Wise Saturn trough in an Australian livestock setting" width={1920} height={1080} priority/></div></section><section className="about-story page-shell"><p className="large-copy">David Wang owns a hobby farm in Australia. Like many livestock owners, he found that trough cleaning consumed time, wasted water and returned again as soon as sediment, feed and organic material settled.</p><p>Instead of accepting that routine, he focused on the point where the waste collected and developed a trough that could clean this lower area automatically. The result became Wise Saturn: a long, low-profile livestock water trough with protected operating components and a scheduled discharge cycle.</p><p>The company&apos;s work remains grounded in that original problem. The aim is not to add technology for its own sake, but to give commercial livestock operators cleaner water management, lower repetitive labour and more controlled water exchange. Product development is supported by an international patent strategy, while field trials and installation feedback continue to shape the system.</p><p>Wise Saturn is currently focused on Australian feedlot sheep operations, large commercial sheep farms and dealer partners who understand agricultural infrastructure. Every installation begins with the operating site—not a generic sales promise.</p><Link className="button button-dark" href="/contact">Talk to Wise Saturn <ArrowIcon/></Link></section></main>}

@@ -1,22 +1,35 @@
 # Wise Saturn Website
 
-This project currently contains structure and planning documents only.
+Production website for Wise Saturn's automatic self-cleaning livestock water trough.
 
-No website framework, dependencies, components, styles, scripts, or application code have been added.
+## Information architecture
 
-## Top-level structure
+- Home — product demonstration, benefits, trial and dealer calls to action
+- Product — dimensions, cleaning system, installation, valve and controller information
+- Trial — supported three-month feedlot trial
+- Videos — database-managed demonstrations
+- Updates — database-managed news, trials, exhibitions and dealer updates
+- Downloads — database-managed approved resources
+- About — concise product origin story
+- Contact — one adaptive product, trial and dealer form
+- Admin — enquiries, CSV export, content and user status
 
-- `public/` — future public-facing assets and downloads
-- `content/` — future page, product, FAQ, video, company, and legal content
-- `references/` — private working references
-- `archive/` — retired or superseded material
-- `ASSET_CHECKLIST.md` — asset collection tracker
-- `CONTENT_CHECKLIST.md` — content preparation tracker
+## Production services
 
-## Rules
+- Vercel project: `wise-saturn-website`
+- GitHub: `yzyemo/wise-saturn-website`
+- Postgres: Neon through the existing Vercel project
+- Email: Resend notification only; full enquiry details remain in the database
 
-1. Keep source/reference material in `references/`.
-2. Place only approved public assets in `public/`.
-3. Do not treat placeholders or competitor references as production assets.
-4. Record unconfirmed information as `TODO` until it is approved.
+## Required environment variables
 
+- `DATABASE_URL`
+- `ADMIN_SESSION_SECRET`
+- `ADMIN_INITIAL_PASSWORD`
+- `DAVID_INITIAL_PASSWORD`
+- `NEMO_INITIAL_PASSWORD`
+- `RESEND_API_KEY`
+
+The admin usernames are `admin`, `david`, and `nemo`. Initial passwords are deployment secrets and are never committed.
+
+Preserve the existing lockfile, `.openai`, worker, Vite and Vercel configuration.
