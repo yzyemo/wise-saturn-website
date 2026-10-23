@@ -19,8 +19,14 @@ const photos = [
   ["443", "Award presentation at Australian National Field Days."],
   ["446", "Visitors discuss the Saturn system at the field days."],
   ["447", "A conversation at the Saturn exhibition display."],
+  ["448", "A discussion beside the Saturn trough at the field days."],
   ["449", "Saturn livestock water system on display at the field days."],
   ["450", "The Saturn exhibition at Australian National Field Days."],
+  ["451", "The Saturn display and award certificate at the field days."],
+  ["452", "Two people beside the Saturn display at the field days."],
+  ["453", "A presenter beside the Saturn display and award certificate."],
+  ["454", "Another view of the presenter and Saturn field days display."],
+  ["455", "Field days display with annotated dimensions and two mounted riders in the background."],
 ];
 export default async function AwardArticle() {
   const item = (await getPublishedContent("update")).find(entry => entry.slug === slug);
