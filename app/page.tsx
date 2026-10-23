@@ -4,6 +4,7 @@ import { getProductSections,getPublishedContent,youtubeEmbed } from "@/lib/conte
 import DemoVideo from "./components/DemoVideo";
 import ProductTabs from "./components/ProductTabs";
 import { ArrowIcon } from "./components/Icons";
+import "./award.css";
 
 const benefitCards=[
   {title:"Self Cleaning",text:"A scheduled cycle moves settled waste through the protected discharge system.",value:"Less repetitive trough emptying and scrubbing.",image:"/images/products/main-product/studio/water-trough-main-angle.png",position:"50% 56%"},
@@ -26,6 +27,8 @@ export default async function Home(){const[sections,videos,updates]=await Promis
   <section className="product-tab-section page-shell"><div className="section-heading"><div><span className="kicker">Product</span><h2>One system. Full detail.</h2></div><p>Review the product, installation, controls and approved resources without leaving the page.</p></div><ProductTabs sections={sections}/></section>
 
   <section className="media-news-grid page-shell"><div className="homepage-library"><div className="section-heading compact"><div><span className="kicker">Videos</span><h2>See it working.</h2></div><Link className="inline-link" href="/videos">All videos <ArrowIcon/></Link></div><div className="wide-video"><iframe src={embed} title={featured?.title||"Wise Saturn product demonstration"} allow="encrypted-media;picture-in-picture" allowFullScreen/></div><p>{featured?.summary||"See the automatic self-cleaning trough in operation."}</p></div><div className="homepage-news"><div className="section-heading compact"><div><span className="kicker">News</span><h2>Current activity.</h2></div><Link className="inline-link" href="/updates">All news <ArrowIcon/></Link></div>{(updates.length?updates.slice(0,3):[{id:"trial",category:"Support",title:"Three-Month Feedlot Trial Applications Open",summary:"Australian sheep feedlot operators can apply for an on-site product trial."}]).map((item)=><article key={item.id}><span>{item.category}</span><h3>{item.title}</h3><p>{item.summary}</p></article>)}</div></section>
+
+  {updates.some(item=>item.slug==="saturn-trough-2026-nab-agribusiness-award-excellence")&&<section className="page-shell award-recognition"><span className="kicker">Recognition · 2026</span><h2>NAB Agribusiness Award of Excellence</h2><p>Presented to Wisepac Australia at Australian National Field Days.</p><Link className="inline-link" href="/updates/saturn-trough-2026-nab-agribusiness-award-excellence">Read the story <ArrowIcon/></Link></section>}
 
   <section className="conversion-strip page-shell"><div><span className="kicker">Next step</span><h2>Trial the product or represent Wise Saturn.</h2></div><div><Link className="button primary" href="/contact?type=trial">Apply For Trial</Link><Link className="button secondary" href="/contact?type=dealer">Dealer Enquiry</Link></div></section>
 </main>}

@@ -57,7 +57,8 @@ export async function PATCH(request: Request) {
   }
   if (body.resource === "content" && id) {
     const title = clean(body.title, 160);
-    await sql`UPDATE content_items SET title=${title},slug=${slugify(clean(body.slug,100) || title)},summary=${clean(body.summary,500)},body=${clean(body.body)},media_url=${clean(body.media_url,1000)},category=${clean(body.category,80)},status=${body.status === "published" ? "published" : "draft"},sort_order=${Number(body.sort_order) || 0},updated_at=now() WHERE id=${id}`;
+    const existing = await sql`SELECT slug FROM content_items WHERE id=${id} LIMIT 1` as unknown as Array<{slug:string}>;
+    await sql`UPDATE content_items SET title=${title},slug=${slugify(clean(body.slug,100) || existing[0]?.slug || title)},summary=${clean(body.summary,500)},body=${clean(body.body)},media_url=${clean(body.media_url,1000)},category=${clean(body.category,80)},status=${body.status === "published" ? "published" : "draft"},sort_order=${Number(body.sort_order) || 0},updated_at=now() WHERE id=${id}`;
     await sql`INSERT INTO activity_log (id,username,action,entity_type,entity_id) VALUES (${crypto.randomUUID()},${session.username},'update','content',${id})`;
     return NextResponse.json({ ok: true });
   }
