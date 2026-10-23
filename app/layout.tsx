@@ -4,6 +4,7 @@ import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 import "./globals.css";
 import "./responsive-fixes.css";
+import "./how-it-works.css";
 
 const geist = Geist({ variable: "--font-geist", subsets: ["latin"] });
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });

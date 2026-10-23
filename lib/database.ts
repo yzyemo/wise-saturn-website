@@ -1,6 +1,7 @@
 import "server-only";
 import { neon } from "@neondatabase/serverless";
 import { hashPassword } from "./admin-auth";
+import { howItWorksTitle, howItWorksBody } from "./how-it-works";
 
 let client: ReturnType<typeof neon> | null = null;
 let initialized = false;
@@ -13,6 +14,7 @@ export const productSectionDefaults = [
   ["bluetooth", "Bluetooth controller", "Supported installations include controller setup information for scheduling, operation and service checks.", "/downloads"],
   ["downloads", "Current approved documents", "Access the product brochure, installation information, valve notes and Bluetooth controller resources.", "/downloads"],
   ["videos", "Product demonstrations", "Watch cleaning, installation, trial and dealer videos in the Wise Saturn video library.", "/videos"],
+  ["how_it_works", howItWorksTitle, howItWorksBody, ""],
 ] as const;
 
 export function getSql() {
