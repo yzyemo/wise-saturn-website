@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: { images: ["/images/news/anfd-2026-445.webp"] },
 };
 const photos = [
-  ["444", "The 2026 NAB Agribusiness Award of Excellence certificate presented to Wisepac Australia."],
+  ["444", "Wisepac Australia with the 2026 NAB Agribusiness Award of Excellence certificate."],
   ["443", "Award presentation at Australian National Field Days."],
   ["446", "Visitors discuss the Saturn system at the field days."],
   ["447", "A conversation at the Saturn exhibition display."],
@@ -33,7 +33,7 @@ export default async function AwardArticle() {
   if (!item) notFound();
   return <main className="inner-page"><BreadcrumbData items={[["Home", "/"], ["News", "/updates"], ["Award of Excellence", `/updates/${slug}`]]}/>
     <article className="page-shell award-article"><Link href="/updates" className="inline-link">← All news</Link><span className="kicker">{item.category} · 23 October 2026</span><h1>{item.title}</h1>
-      <figure><Image src="/images/news/anfd-2026-445.webp" alt="Saturn livestock water system displayed at Australian National Field Days" width={1800} height={1350} sizes="(max-width: 800px) 100vw, 1100px" priority/><figcaption>Saturn at the 2026 Australian National Field Days.</figcaption></figure>
+      <figure><Image src="/images/news/anfd-2026-445.webp" alt="The 2026 NAB Agribusiness Award of Excellence certificate presented to Wisepac Australia" width={1800} height={1350} sizes="(max-width: 800px) 100vw, 1100px" priority/><figcaption>The 2026 NAB Agribusiness Award of Excellence presented to Wisepac Australia.</figcaption></figure>
       <div className="award-copy">{item.body.split(/\n\s*\n/).filter(Boolean).map((paragraph, index)=><p key={index}>{paragraph}</p>)}<p><Link className="inline-link" href="/product">See how it works →</Link>　<Link className="inline-link" href="/contact?type=trial">Apply for a 3-month trial →</Link></p><p>Sources: <a href="https://anfd.com.au/">Australian National Field Days</a>; <a href="https://www.nsw.gov.au/visiting-and-exploring-nsw/nsw-events/australian-national-field-days-0">NSW Government</a>; supplied award certificate and photographs.</p></div>
       <div className="award-gallery">{photos.map(([id, caption])=><figure key={id}><Image src={`/images/news/anfd-2026-${id}.webp`} alt={caption} width={1800} height={1350} sizes="(max-width: 800px) 100vw, 50vw"/><figcaption>{caption}</figcaption></figure>)}</div>
     </article></main>;
