@@ -20,6 +20,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "Wise Saturn", url: "https://www.wisesaturn.com", logo: "https://www.wisesaturn.com/brand/logo/wise-saturn-logo-primary.png", email: "peixing@hotmail.com", telephone: "+61435694228", areaServed: "Australia", description: "Automatic self-cleaning livestock water troughs with trial and dealer programs.", sameAs:["https://www.youtube.com/watch?v=2WqtQojcaEk"] };
+  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "Wise Saturn", url: "https://www.wisesaturn.com", logo: "https://www.wisesaturn.com/brand/logo/wise-saturn-logo-primary.png", email: "peixing@hotmail.com", telephone: "+61435694228", areaServed: "Australia", description: "Automatic self-cleaning livestock water troughs with trial and dealer programs.", sameAs:["https://youtu.be/EG-EWgt12po"] };
   return <html lang="en"><body className={`${geist.variable} ${mono.variable}`}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}/><SiteHeader />{children}<SiteFooter /></body></html>;
 }
